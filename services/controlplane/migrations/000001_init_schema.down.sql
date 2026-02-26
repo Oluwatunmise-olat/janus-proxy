@@ -1,0 +1,8 @@
+DROP TABLE IF EXISTS audit_logs;
+DROP TABLE IF EXISTS diff_results;
+DROP TABLE IF EXISTS policies;
+DROP TABLE IF EXISTS experiments;
+DROP TABLE IF EXISTS shadow_targets;
+DROP TABLE IF EXISTS routes;
+DROP TABLE IF EXISTS services;
+DROP TABLE IF EXISTS users;
