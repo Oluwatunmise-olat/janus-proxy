@@ -1,0 +1,20 @@
+services:
+  postgres:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-janus}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-janus}
+      POSTGRES_DB: ${POSTGRES_DB:-janus}
+    ports:
+      - "${POSTGRES_PORT:-5432}:5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-janus}"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  nats:
+    image: nats:2.10-alpine
+    ports:
+      - "${NATS_PORT:-4222}:4222"
+    command: ["-js"]
