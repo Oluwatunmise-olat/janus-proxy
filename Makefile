@@ -18,7 +18,7 @@ build-ops-console:
 	cd services/ops-console && go build ./...
 
 up:
-	docker compose -f deploy/compose/docker-compose.yml up -d
+	docker local -f infra/local/docker-local.yml up -d
 
 down:
-	docker compose -f deploy/compose/docker-compose.yml down
+	docker local -f infra/local/docker-local.yml down
